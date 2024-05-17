@@ -8,6 +8,7 @@ import{ContactoComponent}from"./components/contacto/contacto.component"
 import{RegistrarseComponent}from"./components/registrarse/registrarse.component"
 import{IniciarSesionComponent}from"./components/iniciar-sesion/iniciar-sesion.component"
 import{PrivadoComponent}from"./components/privado/privado.component"
+import{NavegacionComponent}from"./components/navegacion/navegacion.component"
 import{NoEncontradoComponent}from"./components/no-encontrado/no-encontrado.component"
 
 
@@ -22,5 +23,6 @@ export const routes: Routes = [
     {path:"privado",component:PrivadoComponent},
     {path:"",redirectTo:"inicio",pathMatch:"full"},
     {path:"**",component: NoEncontradoComponent, title: "Error, la pagina solicitada no existe"},
+    {path: "nevegacion",component:NavegacionComponent}
     
 ];

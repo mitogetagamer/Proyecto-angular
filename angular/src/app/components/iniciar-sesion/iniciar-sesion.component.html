@@ -1,1 +1,6 @@
-<p>iniciar-sesion works!</p>
+<form [formGroup]="credentialsForm" (ngSubmit)="handlesubmit()">
+  <input type="text" placeholder="Username" formControlName="nombre" />
+  <input type="password" placeholder="Password" formControlName="contrasenia" />
+  <input type="submit" value="Log In" />
+</form>
+<!-- <app-iniciar-sesion></app-iniciar-sesion> -->

@@ -7,12 +7,13 @@ import { Credential } from '../credenciales/credentials';
 export class LoginServiceService {
   constructor() {}
   httpclient = inject(HttpClient);
+  // se escribe a donde quiere que haga la petición
 
+  API_URL = 'http://localhost:2000/inicio-sesion/';
   login(credential: Credential) {
-    return this.httpclient.post(
-      // se escribe a donde quiere que haga la petición
-      'http://localhost:2000/inicio-sesion/',
-      credential
-    );
+    return this.httpclient.post(this.API_URL, credential);
+  }
+  validateToken(token: String) {
+    return this.httpclient.get(`${this.API_URL}/${token}`);
   }
 }

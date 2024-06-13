@@ -39,9 +39,11 @@ export class IniciarSesionComponent {
           contrasenia,
         };
         this.loginservice.login(credenciales).subscribe((response: any) => {
-         
-          localStorage.setItem('token', response.datos);
+          console.log(response);
+          localStorage.setItem('token', response.datos.token);
+
           this.router.navigateByUrl('/privado');
+          console.log(contrasenia);
         });
       } else {
         console.log('Error: invalid form');

@@ -1,0 +1,19 @@
+.navegation {
+  background-color: #e1b275;
+}
+.rutas {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xx-large;
+  text-decoration: none;
+  color: #f0e6dc;
+}
+.contenedorRutas {
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-around;
+  height: 12vh;
+  align-items: center;
+}
+a:hover {
+  color: #d08e73;
+}

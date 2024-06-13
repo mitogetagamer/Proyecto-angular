@@ -1,6 +1,31 @@
 <form [formGroup]="credentialsForm" (ngSubmit)="handlesubmit()">
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      placeholder="name@example.com"
+      formControlName="nombre"
+    />
+    <label for="floatingInput">Email address</label>
+  </div>
+  <div class="form-floating">
+    <input
+      type="password"
+      class="form-control"
+      id="floatingPassword"
+      placeholder="Password"
+      formControlName="contrasenia"
+    />
+    <label for="floatingPassword">Password</label>
+    <button type="submit" value="iniciar-sesion" class="btn btn-primary">
+      Enviar
+    </button>
+  </div>
+</form>
+<!-- <form [formGroup]="credentialsForm" (ngSubmit)="handlesubmit()">
   <input type="text" placeholder="Username" formControlName="nombre" />
   <input type="password" placeholder="Password" formControlName="contrasenia" />
-  <input type="submit" value="Log In" />
-</form>
+  <input type="submit" value="iniciar-sesion" />
+</form> -->
 <!-- <app-iniciar-sesion></app-iniciar-sesion> -->

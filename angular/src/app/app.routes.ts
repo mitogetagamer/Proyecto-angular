@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { activateGuard } from './guards/activate.guard';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
@@ -11,7 +12,7 @@ import { NavegacionComponent } from './components/navegacion/navegacion.componen
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
 
 export const routes: Routes = [
-  { path: 'inicio', title: 'Iniciooo', component: InicioComponent },
+  { path: 'inicio', title: 'Inicio', component: InicioComponent },
   { path: 'productos', title: 'Productos', component: ProductosComponent },
   { path: 'servicios', title: 'Servicios', component: ServiciosComponent },
   { path: 'nosotros', title: 'Nosotros', component: NosotrosComponent },
@@ -22,7 +23,12 @@ export const routes: Routes = [
     component: RegistrarseComponent,
   },
   { path: 'login', title: 'Login', component: IniciarSesionComponent },
-  { path: 'privado', title: 'Privado', component: PrivadoComponent },
+  {
+    path: 'privado',
+    title: 'Privado',
+    component: PrivadoComponent,
+    canActivate: [activateGuard],
+  },
   { path: 'nevegacion', title: 'Navegación', component: NavegacionComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   {

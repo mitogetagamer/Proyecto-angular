@@ -6,11 +6,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrService } from 'ngx-toastr';
 import { Credential } from '../../credenciales/credentials';
 import { LoginServiceService } from '../../services/login.service.service';
-
-const jwtHelperService = new JwtHelperService();
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -21,6 +19,7 @@ const jwtHelperService = new JwtHelperService();
 })
 export class IniciarSesionComponent {
   router = inject(Router);
+  toastrService = inject(ToastrService);
   loginservice: LoginServiceService = inject(LoginServiceService);
 
   credentialsForm = new FormGroup({
@@ -39,15 +38,16 @@ export class IniciarSesionComponent {
           contrasenia,
         };
         this.loginservice.login(credenciales).subscribe((response: any) => {
-          console.log(response);
-          localStorage.setItem('token', response.datos.token);
-
-          this.router.navigateByUrl('/privado');
-          console.log(contrasenia);
+          if (response.resultado === 'bien') {
+            localStorage.setItem('token', response.datos.token);
+            this.router.navigateByUrl('/privado');
+          } else {
+            this.toastrService.warning('Invalid credentials');
+          }
         });
-      } else {
-        console.log('Error: invalid form');
       }
+    } else {
+      this.toastrService.warning('Todos los campos son necesarios');
     }
   }
 }

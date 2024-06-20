@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { LoginServiceService } from '../../services/login.service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-privado',
@@ -10,8 +11,8 @@ import { LoginServiceService } from '../../services/login.service.service';
 })
 export class PrivadoComponent {
   loginservice = inject(LoginServiceService);
-
-  nombre: string = '';
+  toastrService = inject(ToastrService);
+  name: string = '';
   ngOnInit() {
     const token: any = localStorage.getItem('token');
     console.log('token ', token);
@@ -19,13 +20,17 @@ export class PrivadoComponent {
       this.loginservice.validateToken(token).subscribe((response: any) => {
         console.log('response: ', response);
         if (response.resultado === 'bien') {
-          this.nombre = response.datos.name;
+          this.name = response.datos.name;
+          this.toastrService.success(`hola, ${this.name}!`);
         } else {
-          console.log('el token no es válido...');
+          //console.log('el token no es válido...');
+          this.loginservice.logOut();
         }
       });
     } else {
-      console.log('el Token no existe');
+      //console.log('el Token no existe');
+      this.toastrService.info('Porfavor Inicie sesión');
+      this.loginservice.logOut();
     }
   }
 }

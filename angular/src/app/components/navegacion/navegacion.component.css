@@ -1,4 +1,43 @@
-.navegation {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  height: 70vh;
+  background-color: #f3dbc3;
+  background-image: url("../../../assets/images/bkry\ nav_11zon.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: green;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: aqua;
+}
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .navegation {
   background-color: #e1b275;
 }
 .rutas {
@@ -16,4 +55,4 @@
 }
 a:hover {
   color: #d08e73;
-}
+} */

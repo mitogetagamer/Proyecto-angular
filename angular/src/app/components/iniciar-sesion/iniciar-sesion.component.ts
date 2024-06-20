@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Credential } from '../../credenciales/credentials';
 import { LoginServiceService } from '../../services/login.service.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-iniciar-sesion',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './iniciar-sesion.component.html',
   styleUrl: './iniciar-sesion.component.css',
 })

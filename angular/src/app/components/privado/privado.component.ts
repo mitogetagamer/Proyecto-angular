@@ -21,7 +21,7 @@ export class PrivadoComponent {
         console.log('response: ', response);
         if (response.resultado === 'bien') {
           this.name = response.datos.name;
-          this.toastrService.success(`hola, ${this.name}!`);
+          this.toastrService.success(`hola, bienvenido!`);
         } else {
           //console.log('el token no es válido...');
           this.loginservice.logOut();

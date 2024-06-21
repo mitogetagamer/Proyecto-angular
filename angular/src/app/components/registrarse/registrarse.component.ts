@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { RegistrarseService } from '../../services/registrarse.service';
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -8,8 +10,25 @@ import {
 @Component({
   selector: 'app-registrarse',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './registrarse.component.html',
   styleUrl: './registrarse.component.css',
 })
-export class RegistrarseComponent {}
+export class RegistrarseComponent {
+  registrarseservice = inject(RegistrarseService);
+  nombre: String = '';
+  email: String = '';
+  contrasenia: String = '';
+
+  handleSubmit() {
+    if (this.email) {
+      this.registrarseservice
+        .crearUsuario(this.nombre, this.email, this.contrasenia)
+        .subscribe((response: any) => {
+          console.log('response: ', response);
+        });
+    } else {
+      console.log('mal');
+    }
+  }
+}

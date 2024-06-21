@@ -2,16 +2,21 @@
   <header>
     <div class="navbar">
       <div class="logo">
-        <a href="#">Mapcakes Bakery</a>
+        <a>Mapcakes Bakery</a>
       </div>
       <ul class="links">
-        <li><a routerLink="/inicio">Home</a></li>
-        <li><a routerLink="/nosotros"> Nosotros</a></li>
+        <li><a class="size" routerLink="/inicio">Home</a></li>
+        <li><a class="size" routerLink="/nosotros"> Nosotros</a></li>
       </ul>
       <a class="action_btn" routerLink="/registrarse"> Registrarse</a>
-      <div class="toggle_btn">
-        <i class="bx bx-menu"></i>
-      </div>
+    </div>
+
+    <div class="dropdown_menu open">
+      <li><a routerLink="/inicio">Home</a></li>
+      <li><a routerLink="/nosotros"> Nosotros</a></li>
+      <li>
+        <a class="action_btn" routerLink="/registrarse"> Registrarse</a>
+      </li>
     </div>
   </header>
 </body>

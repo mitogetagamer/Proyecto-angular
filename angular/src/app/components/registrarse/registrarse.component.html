@@ -1,7 +1,54 @@
-<p>registrarse works!</p>
-<h3>Fformularios</h3>
-<form>
-    <label>Framework Favorito
-        <input type="text" placeholder="Usuario" form>
-    </label>
-</form>
+<body>
+  <div class="wraper">
+    <form (ngSubmit)="handleSubmit()">
+      <h1>Sig In</h1>
+      <div class="inputBox">
+        <input
+          id="inputNombre"
+          type="text"
+          placeholder="Name"
+          required
+          name="nombre"
+          [(ngModel)]="nombre"
+        />
+        <i class="bx bx-user-circle"></i>
+      </div>
+      <div class="inputBox">
+        <input
+          id="inputEmail"
+          type="email"
+          placeholder="email"
+          required
+          name="email"
+          [(ngModel)]="email"
+        />
+        <i class="bx bx-envelope"></i>
+      </div>
+      <div class="inputBox">
+        <input
+          id="inputContrasenia"
+          type="password"
+          placeholder="Password"
+          required
+          name="contrasenia"
+          [(ngModel)]="contrasenia"
+        />
+        <i class="bx bxs-lock"></i>
+      </div>
+      <div class="remember">
+        <label><input type="checkbox" />Recordarme</label>
+      </div>
+      <button type="submit" class="btn" value="iniciar-sesion">
+        Crear Cuenta
+      </button>
+      <div class="register-link">
+        <p>
+          ¿ya tienes una cuenta?
+          <a routerLink="/login">Inicia sesión</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</body>
+
+<!-- [formGroup]="credentialsForm" (ngSubmit)="handlesubmit()" -->

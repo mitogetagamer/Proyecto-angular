@@ -1,1 +1,77 @@
 <p>productos works!</p>
+@if (cpks.length > 0) {
+<div class="card-group">
+  @for (cpk of cpks; track $index) {
+  <div class="card" style="width: 18rem">
+    <img
+      src="localhost:2000/Lanzamientos/{{ cpk.imagen }}"
+      class="card-img-top"
+      alt="imagen de un {{ cpk.nombre }} {{ cpk.Sabor }}"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ cpk.nombre }} {{ cpk.color }}</h5>
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Basic mixed styles example"
+        --
+      ></div>
+    </div>
+  </div>
+  }
+</div>
+}@else{
+<p>no existen gorras para mostrar</p>
+}
+<hr />
+<div class="d-lg-flex justify-content-center">
+  <form (ngSubmit)="handleSubmit()" class="py-5 col-lg-6">
+    <div class="mb-3">
+      <label for="inputName" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputName"
+        aria-describedby="nameHelp"
+        name="nombre"
+        [(ngModel)]="nombre"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="inputSabor" class="form-label">Sabor</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputSabor"
+        aria-describedby="saborHelp"
+        name="color"
+        [(ngModel)]="sabor"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="inputPrecio" class="form-label">Precio</label>
+      <input
+        type="number"
+        class="form-control"
+        id="inputPrecio"
+        aria-describedby="precioHelp"
+        name="precio"
+        [(ngModel)]="precio"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="inputImage" class="form-label">Imagen</label>
+      <input
+        type="file"
+        class="form-control"
+        id="inputimagen"
+        aria-describedby="imagenHelp"
+        (change)="inputFile($event)"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary bg-my-color col-12">
+      Crear Mapcake
+    </button>
+  </form>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -11,6 +11,7 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
 import { PrivadoComponent } from './components/privado/privado.component';
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
 import { NavegacionComponent } from './components/navegacion/navegacion.component';
+import { InicioService } from './services/inicio.service';
 @Component({
   selector: 'app-root',
   standalone: true,

@@ -1,27 +1,41 @@
-<p>productos works!</p>
-@if (cpks.length > 0) {
-<div class="card-group">
+@if (cpks.length>0) {
+<ol>
   @for (cpk of cpks; track $index) {
-  <div class="card" style="width: 18rem">
-    <img
-      src="localhost:2000/Lanzamientos/{{ cpk.imagen }}"
-      class="card-img-top"
-      alt="imagen de un {{ cpk.nombre }} {{ cpk.Sabor }}"
-    />
-    <div class="card-body">
-      <h5 class="card-title">{{ cpk.nombre }} {{ cpk.color }}</h5>
-      <div
-        class="btn-group"
-        role="group"
-        aria-label="Basic mixed styles example"
-        --
-      ></div>
+  <li>
+    <div class="cupcake">
+      <img
+        src="http://localhost:2000/imagenes/{{ cpk.imagen }}"
+        alt="Mapcake"
+      />
+      <h4>{{ cpk.nombre }}</h4>
+      <p>{{ cpk.descripcion }}</p>
+      <h5>Precio: ${{ cpk.precio }}</h5>
+
+      <button
+        type="button"
+        class="btn btn-warning"
+        (click)="handleUpdate()"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Update
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="handleDelete(cpk._id)"
+      >
+        Delete
+      </button>
     </div>
-  </div>
+  </li>
   }
-</div>
-}@else{
-<p>no existen gorras para mostrar</p>
+</ol>
+
+}@else {
+<p>No existen Mapcakes para mostrar</p>
 }
 <hr />
 <div class="d-lg-flex justify-content-center">
@@ -38,14 +52,14 @@
       />
     </div>
     <div class="mb-3">
-      <label for="inputSabor" class="form-label">Sabor</label>
+      <label for="inputSabor" class="form-label">Descripcion</label>
       <input
         type="text"
         class="form-control"
         id="inputSabor"
-        aria-describedby="saborHelp"
+        aria-describedby="descripcionHelp"
         name="color"
-        [(ngModel)]="sabor"
+        [(ngModel)]="descripcion"
       />
     </div>
 
@@ -74,4 +88,86 @@
       Crear Mapcake
     </button>
   </form>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Actualiza tus Mapcakes
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="handleSubmit()" class="py-5 col-lg-6">
+          <div class="mb-3">
+            <label for="inputImage" class="form-label">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputimagen"
+              aria-describedby="imagenHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inputName" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputName"
+              aria-describedby="nameHelp"
+              name="nombre"
+              [(ngModel)]="nombre"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inputSabor" class="form-label">Descripcion</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputSabor"
+              aria-describedby="descripcionHelp"
+              name="color"
+              [(ngModel)]="descripcion"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="inputPrecio" class="form-label">Precio</label>
+            <input
+              type="number"
+              class="form-control"
+              id="inputPrecio"
+              aria-describedby="precioHelp"
+              name="precio"
+              [(ngModel)]="precio"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary bg-my-color col-12">
+            Actualizar Mapcake
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>

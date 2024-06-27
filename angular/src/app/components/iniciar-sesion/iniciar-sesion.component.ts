@@ -43,7 +43,7 @@ export class IniciarSesionComponent {
             localStorage.setItem('token', response.datos.token);
             this.router.navigateByUrl('/privado');
           } else {
-            this.toastrService.warning('Invalid credentials');
+            this.toastrService.warning('Correo o Contraseña incorrectos');
           }
         });
       }

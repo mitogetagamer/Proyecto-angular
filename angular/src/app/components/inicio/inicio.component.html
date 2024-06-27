@@ -2,22 +2,29 @@
 
 <body>
   <div class="container" id="inicio">
+    @for (elemento of Datos; track elemento._id) {
+
     <div class="cupcake">
       <img
-        src="../../../assets/images/mapcakes beta.jpg"
-        alt="Cupcake de Vainilla"
+        src="http://localhost:2000/imagenes/{{ elemento.imagen }}"
+        alt="Mapcake"
       />
-      <h4>Mapcake de Amapola con arándanos</h4>
-      <p>Un delicioso Mapcake de vainilla con semillas de Amapola.</p>
+      <h4>{{ elemento.nombre }}</h4>
+      <p>{{ elemento.descripcion }}</p>
+      <h5>Precio: ${{ elemento.precio }}</h5>
       <button class="buton" type="button" routerLink="/privado">Ordenar</button>
     </div>
+
+    }
+  </div>
+  <!-- <div class="container" id="inicio">
     <div class="cupcake">
       <img
         src="../../../assets/images/mapcakes beta.jpg"
         alt="Cupcake de Chocolate"
       />
       <h4>Mapcake de Naranja con arándanos</h4>
-      <p>Un delicioso Mapcake de .</p>
+      <p> </p>
       <button class="buton" type="button" routerLink="/privado">Ordenar</button>
     </div>
     <div class="cupcake">
@@ -56,7 +63,7 @@
       </p>
       <button class="buton" routerLink="/privado" type="button">Ordenar</button>
     </div>
-  </div>
+  </div> -->
   <footer id="contacto">
     <p>Contacto: Mapcakes.com | Tel: 123-456-7890</p>
   </footer>

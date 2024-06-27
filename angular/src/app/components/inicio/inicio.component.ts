@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { InicioService } from '../../services/inicio.service';
+
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css',
 })
@@ -22,7 +24,6 @@ export class InicioComponent {
       } else {
         console.log('error');
       }
-      this.Datos = respuesta.datos;
     });
   }
   ngOnInit() {

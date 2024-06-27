@@ -15,13 +15,13 @@ li {
   list-style: none;
 }
 .size {
-  font-size: 1, 9rem;
+  font-size: 3, 10rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 a {
   text-decoration: none;
-  color: gray;
-  font-size: 1rem;
+  color: black;
+  font-size: 1.3rem;
 }
 
 a:hover {
@@ -56,7 +56,7 @@ header {
 }
 
 .action_btn {
-  background-color: #e1b275;
+  background-color: #f76916e1;
   color: #ffff;
   padding: 0.5rem 1rem;
   border: none;

@@ -1,8 +1,14 @@
 <body>
-  <form class="row g-3">
+  <form class="row g-3" (ngSubmit)="handeleSubmit()">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Nombre de usuario</label>
-      <input type="text" class="form-control" id="inputEmail4" />
+      <input
+        type="text"
+        class="form-control"
+        id="inputEmail4"
+        name="nombreDeUsuario"
+        [(ngModel)]="nombreDeUsuario"
+      />
     </div>
 
     <div class="col-12">
@@ -12,6 +18,8 @@
         class="form-control"
         id="inputAddress"
         placeholder="Calle# num "
+        name="direccion"
+        [(ngModel)]="direccion"
       />
     </div>
     <div class="col-12">
@@ -20,12 +28,20 @@
         type="text"
         class="form-control"
         id="inputAddress2"
-        placeholder="Apartmento, studio, or casa"
+        placeholder="Apartmento, studio o casa"
+        name="direccion2"
+        [(ngModel)]="direccion2"
       />
     </div>
     <div class="col-md-6">
       <label for="inputCity" class="form-label">Ciudad</label>
-      <input type="text" class="form-control" id="inputCity" />
+      <input
+        type="text"
+        class="form-control"
+        id="inputCity"
+        name="ciudad"
+        [(ngModel)]="ciudad"
+      />
     </div>
 
     <div class="col-12">

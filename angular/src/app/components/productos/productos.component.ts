@@ -1,19 +1,19 @@
 import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TiendaService } from '../../services/tienda.service';
 import { CurrencyPipe } from '@angular/common';
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [FormsModule, CurrencyPipe],
+  imports: [FormsModule, CurrencyPipe, ReactiveFormsModule],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css',
 })
 export class ProductosComponent {
   toastservide = inject(ToastrService);
   tiendaservice = inject(TiendaService);
-
+  myValue: string = '';
   nombre: String = '';
   sabor: String = '';
   descripcion: String = '';
@@ -62,6 +62,7 @@ export class ProductosComponent {
         this.toastservide.error('An error ocurred');
       }
     });
+    this.myValue = 'Nuevo texto desde OnInit';
   }
   handleDelete(id: string) {
     this.tiendaservice.deleteMapcakes(id).subscribe((res: any) => {
@@ -72,15 +73,45 @@ export class ProductosComponent {
       }
     });
   }
-  handleUpdate() {}
-  // handleDelete(id: string) {
-  //   this.tiendaservice.deleteCap(id).subscribe((res: any) => {
-  //     if (res.resultado === 'bien') {
-  //       this.toastrService.success(res.mensaje);
-  //       this.getAllCaps();
-  //     } else {
-  //       this.toastrService.error('An error ocurred');
-  //     }
-  //   });
-  // }
+  handleUpdate(cpk: any) {
+    console.log('cpk: ', cpk);
+    this.cpkselected = { cpk };
+    console.log('cpk selected: ', this.cpkselected);
+  }
+  handleActualizar() {
+    if (this.nombre === '' || this.descripcion === '' || this.precio === 0) {
+      console.log('nombre:  ', this.nombre);
+      this.toastservide.error('error al actualizar');
+    } else {
+      this.tiendaservice
+        .editarMapcakes(this.cpkselected.cpk.precio.nombre.descripcion)
+
+        .subscribe((response: any) => {
+          console.log(this.imagen);
+          console.log(this.nombre);
+          console.log(this.descripcion);
+          console.log(this.precio);
+          console.log('response: ', response);
+          if (response.resultado === 'bien') {
+            this.toastservide.success('ahora sii');
+          } else {
+            this.toastservide.error('aún no');
+          }
+        });
+    }
+
+    // if (
+    //   this.nombre === '' ||
+    //   this.descripcion === '' ||
+    //   this.precio === undefined
+    // ) {
+    //   this.toastservide.warning('todos los campos son requeridos');
+    // } else {
+    // }
+    // this.tiendaservice
+    //   .editarMapcakes(this.nombre, this.descripcion, this.precio)
+    //   .subscribe((response: any) => {
+    //     console.log(this.nombre);
+    //   });
+  }
 }

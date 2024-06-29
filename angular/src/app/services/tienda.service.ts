@@ -1,4 +1,5 @@
 import { Injectable, inject } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
@@ -29,11 +30,13 @@ export class TiendaService {
   deleteMapcakes(id: string) {
     return this.httpClient.delete(`${this.API_URL}/${id}`);
   }
-  editarMapcakes(nombre: any, precio: any, descripcion: any, id: string) {
-    const formData = new FormData();
-    formData.append('nombre', nombre);
-    formData.append('precio', precio);
-    formData.append('descripcion', descripcion);
-    return this.httpClient.put(this.API_URL, formData + '/' + `${id}`);
+  editarMapcakes(id: any) {
+    // const formData = new FormData();
+    // formData.append('nombre', nombre);
+    // formData.append('descripcion', descripcion);
+    // formData.append('precio', precio);
+
+    const URL = `${this.API_URL}/${id}`;
+    return this.httpClient.put(URL, id);
   }
 }

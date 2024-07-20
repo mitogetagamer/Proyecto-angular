@@ -1,13 +1,13 @@
-import { Injectable, inject } from '@angular/core';
-
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root',
 })
 export class TiendaService {
-  httpClient = inject(HttpClient);
-  constructor() {}
-  API_URL = 'http://localhost:2000/Lanzamientos/';
+  private API_URL = 'http://localhost:2000/Lanzamientos/';
+
+  constructor(private httpClient: HttpClient) {}
 
   crearMapcake(
     nombre: any,
@@ -24,19 +24,21 @@ export class TiendaService {
     formdata.append('descripcion', descripcion);
     return this.httpClient.post(this.API_URL, formdata);
   }
+
   getMapcakes() {
     return this.httpClient.get(this.API_URL);
   }
+
   deleteMapcakes(id: string) {
     return this.httpClient.delete(`${this.API_URL}/${id}`);
   }
-  editarMapcakes(id: any) {
-    // const formData = new FormData();
-    // formData.append('nombre', nombre);
-    // formData.append('descripcion', descripcion);
-    // formData.append('precio', precio);
 
+  editarMapcakes(id: string, nombre: any, precio: any, descripcion: any) {
+    const formData = new FormData();
+    formData.append('nombre', nombre);
+    formData.append('precio', precio);
+    formData.append('descripcion', descripcion);
     const URL = `${this.API_URL}/${id}`;
-    return this.httpClient.put(URL, id);
+    return this.httpClient.put(URL, formData);
   }
 }

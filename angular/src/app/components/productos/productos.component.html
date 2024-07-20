@@ -116,9 +116,15 @@
 
         <form (ngSubmit)="handleActualizar()" class="py-5 col-lg-6">
           <div class="mb-3">
-            <label for="inputImage" class="form-label"
-              >ID: {{ cpkselected.cpk._id }}</label
-            >
+            <label for="inputImage" class="form-label">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputimagen"
+              aria-describedby="imagenHelp"
+              [value]="cpkselected?.cpk._id"
+              disabled
+            />
           </div>
           <div class="mb-3">
             <label for="inputName" class="form-label">Nombre</label>
@@ -132,17 +138,16 @@
             />
           </div>
           <div class="mb-3">
-            <label for="inputSabor" class="form-label">Descripcion</label>
+            <label for="inputDescripcion" class="form-label">Descripcion</label>
             <input
               type="text"
               class="form-control"
-              id="inputSabor"
+              id="inputDescripcion"
               aria-describedby="descripcionHelp"
               name="descripcion"
               [(ngModel)]="descripcion"
             />
           </div>
-
           <div class="mb-3">
             <label for="inputPrecio" class="form-label">Precio</label>
             <input
@@ -154,19 +159,19 @@
               [(ngModel)]="precio"
             />
           </div>
-
           <button type="submit" class="btn btn-primary bg-my-color col-12">
             Actualizar Mapcake
           </button>
         </form>
+
         }
       </div>
-      <div class="modal-footer">
+      <!-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
         <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class RegistrarseService {
   constructor() {}
   httpClient = inject(HttpClient);
-  API_URL = 'http://localhost:2000/usuarios';
+  API_URL = 'http://18.117.89.19:3000/usuarios';
   crearUsuario(nombre: any, email: any, contrasenia: any) {
     const formData = new FormData();
     formData.append('nombre', nombre);

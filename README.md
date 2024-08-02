@@ -51,4 +51,4 @@ Este proyecto mezcla el front con el back y contiene procesos como la creación 
 - Implementar interfaces
 - Implementar guards
 - Actualizar documentación
-c
+  c

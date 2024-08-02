@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class TiendaService {
-  private API_URL = 'http://18.117.89.19:3000/Lanzamientos/';
+  private API_URL = 'http://18.221.235.213:3000/Lanzamientos/';
 
   constructor(private httpClient: HttpClient) {}
 

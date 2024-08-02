@@ -12,6 +12,7 @@ import { PrivadoComponent } from './components/privado/privado.component';
 import { NoEncontradoComponent } from './components/no-encontrado/no-encontrado.component';
 import { NavegacionComponent } from './components/navegacion/navegacion.component';
 import { InicioService } from './services/inicio.service';
+
 @Component({
   selector: 'app-root',
   standalone: true,

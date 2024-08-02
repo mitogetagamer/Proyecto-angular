@@ -7,7 +7,7 @@ body {
 }
 header {
   background-color: #ff6f61;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 1rem;
   text-align: center;
 }
@@ -73,7 +73,7 @@ footer {
   background: #ffcc80;
   transition: 0.5s;
 }
-.buton:hover {  
+.buton:hover {
   background: #ff6f61;
 }
 @media (min-width: 600px) {

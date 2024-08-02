@@ -24,7 +24,10 @@
               "src/styles.css",
               "./node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/global/window.js",
+              "node_modules/process/browser.js"
+            ]
           },
           "configurations": {
             "production": {

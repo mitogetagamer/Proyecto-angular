@@ -29,7 +29,7 @@ export const routes: Routes = [
     component: PrivadoComponent,
     canActivate: [activateGuard],
   },
-  { path: 'nevegacion', title: 'Navegación', component: NavegacionComponent },
+  { path: 'navegacion', title: 'Navegación', component: NavegacionComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   {
     path: '**',

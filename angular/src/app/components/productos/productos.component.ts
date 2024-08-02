@@ -3,7 +3,6 @@ import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TiendaService } from '../../services/tienda.service';
 import { CurrencyPipe } from '@angular/common';
-import { UploadService } from '../../services/upload.service';
 
 @Component({
   selector: 'app-productos',
@@ -13,13 +12,6 @@ import { UploadService } from '../../services/upload.service';
   styleUrl: './productos.component.css',
 })
 export class ProductosComponent {
-
-
-
-
-
-
-  
   toastservide = inject(ToastrService);
   tiendaservice = inject(TiendaService);
   myValue: string = '';

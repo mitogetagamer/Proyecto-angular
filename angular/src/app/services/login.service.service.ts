@@ -13,7 +13,7 @@ export class LoginServiceService {
   router = inject(Router);
   // se escribe a donde quiere que haga la petición
 
-  API_URL = 'http://18.221.235.213:3000/inicio-sesion/';
+  API_URL = 'http://18.116.31.73:3000/inicio-sesion/';
   login(credential: Credential) {
     return this.httpclient.post(this.API_URL, credential);
   }

@@ -3,11 +3,17 @@ import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TiendaService } from '../../services/tienda.service';
 import { CurrencyPipe } from '@angular/common';
+import { NavegacionComponent } from '../navegacion/navegacion.component';
 
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [FormsModule, CurrencyPipe, ReactiveFormsModule],
+  imports: [
+    FormsModule,
+    CurrencyPipe,
+    ReactiveFormsModule,
+    NavegacionComponent,
+  ],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css',
 })
@@ -52,6 +58,7 @@ export class ProductosComponent {
         this.toastservide.error('Ah ocurrido un error al elimianr el mapcake');
       }
     });
+    return true;
   }
 
   handleUpdate(cpk: any) {

@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RegistrarseService } from '../../services/registrarse.service';
+import { NavegacionComponent } from '../navegacion/navegacion.component';
 import { ToastrService } from 'ngx-toastr';
 import {
   FormsModule,
@@ -11,7 +12,7 @@ import {
 @Component({
   selector: 'app-registrarse',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, RouterLink],
+  imports: [FormsModule, ReactiveFormsModule, RouterLink, NavegacionComponent],
   templateUrl: './registrarse.component.html',
   styleUrl: './registrarse.component.css',
 })

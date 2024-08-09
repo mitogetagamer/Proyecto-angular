@@ -101,7 +101,7 @@ export class ProductosComponent {
           console.log(
             'nombre: ',
             this.nombre,
-            'descricpicoon: ',
+            'descripción: ',
             this.descripcion,
             'precio: ',
             this.precio

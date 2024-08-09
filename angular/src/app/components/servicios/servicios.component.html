@@ -1,1 +1,25 @@
-<p>servicios Works</p>
+<header>
+  <app-navegacion></app-navegacion>
+</header>
+<body>
+  <div class="container" id="inicio">
+    @for (elemento of Datos; track elemento._id) {
+
+    <div class="cupcake">
+      <h4 class="title">{{ elemento.nombre }}</h4>
+      <img
+        src="http://18.116.31.73:3000/imagenes/{{ elemento.imagen }}"
+        alt="Mapcake"
+      />
+
+      <p class="t1">{{ elemento.descripcion }}</p>
+      <button class="buton" type="button" routerLink="/privado">Ordenar</button>
+      <br />
+      <br />
+
+      <h5 class="precio">Precio: ${{ elemento.precio }}</h5>
+    </div>
+
+    }
+  </div>
+</body>

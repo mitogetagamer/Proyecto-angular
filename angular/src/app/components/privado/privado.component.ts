@@ -3,10 +3,11 @@ import { LoginServiceService } from '../../services/login.service.service';
 import { ToastrService } from 'ngx-toastr';
 import { EnviosService } from '../../services/envios.service';
 import { FormsModule } from '@angular/forms';
+import { NavegacionComponent } from '../navegacion/navegacion.component';
 @Component({
   selector: 'app-privado',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NavegacionComponent],
   templateUrl: './privado.component.html',
   styleUrl: './privado.component.css',
 })

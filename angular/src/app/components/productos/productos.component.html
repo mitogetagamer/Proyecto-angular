@@ -7,7 +7,7 @@
   <li>
     <div class="cupcake">
       <img
-        src="http://localhost:3000/imagenes/{{ cpk.imagen }}"
+        src="http://18.116.31.73:3000/imagenes/{{ cpk.imagen }}"
         alt="Mapcake"
       />
       <h4>{{ cpk.nombre }}</h4>
@@ -137,7 +137,7 @@
               id="inputName"
               aria-describedby="nameHelp"
               name="nombre"
-              [(ngModel)]="nombre"
+              [(ngModel)]="cpkselected.cpk.nombre"
             />
           </div>
           <div class="mb-3">
@@ -148,7 +148,7 @@
               id="inputDescripcion"
               aria-describedby="descripcionHelp"
               name="descripcion"
-              [(ngModel)]="descripcion"
+              [(ngModel)]="cpkselected.cpk.descripcion"
             />
           </div>
           <div class="mb-3">
@@ -159,7 +159,7 @@
               id="inputPrecio"
               aria-describedby="precioHelp"
               name="precio"
-              [(ngModel)]="precio"
+              [(ngModel)]="cpkselected.cpk.precio"
             />
           </div>
           <button type="submit" class="btn btn-primary bg-my-color col-12">

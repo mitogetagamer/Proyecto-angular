@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-
+import { NavegacionComponent } from '../navegacion/navegacion.component';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-nosotros',
   standalone: true,
-  imports: [],
+  imports: [NavegacionComponent, RouterLink],
   templateUrl: './nosotros.component.html',
-  styleUrl: './nosotros.component.css'
+  styleUrl: './nosotros.component.css',
 })
-export class NosotrosComponent {
-
-}
+export class NosotrosComponent {}

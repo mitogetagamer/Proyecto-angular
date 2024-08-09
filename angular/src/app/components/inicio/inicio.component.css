@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,201 +13,24 @@ body {
   width: 100;
   height: 100vh;
 }
-.header-c {
-  display: flex;
-  align-items: center;
+.text {
+  font-weight: 600;
+  color: #000000;
+  font-size: 36px;
 }
-header {
-  background-color: #ffcc80;
-  color: rgb(255, 255, 255);
-  padding: 1rem;
-  text-align: center;
-}
-nav {
-  background-color: #ffab91;
-  padding: 1rem;
-}
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-nav ul li {
-  margin: 0 1rem;
-}
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+
 .container {
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  justify-content: left;
 }
-.cupcake {
-  background-color: #ffe0b2;
-  border: 1px solid #ffcc80;
-  border-radius: 10px;
-  padding: 1.2rem;
-  margin: 1.2rem;
-  width: 100%;
-  max-width: 360px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.cupcake img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-.pata {
-  background-color: #ff6f61;
-
-  text-align: center;
-  padding: 1rem;
-  background-color: #f7bff7be;
-}
-.buton {
-  position: relative;
-  padding: 8px 10px;
-  border-radius: 13px;
-
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: x-large;
-  border: none;
-  outline: none;
-  background: #ffcc80;
-  transition: 0.5s;
-}
-.buton:hover {
-  background: #ff6f61;
-}
-@media (min-width: 600px) {
-  .cupcake {
-    width: calc(60% - 2.4rem);
-  }
-}
-@media (min-width: 900px) {
-  .cupcake {
-    width: calc(40% - 2.4rem);
-  }
-}
-@media (min-width: 1200px) {
-  .cupcake {
-    width: calc(27.78% - 2.4rem);
-  }
-
-  li {
-    list-style: none;
-  }
-  .size {
-    font-size: 3, 10rem;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-  }
-  a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
-  }
-
-  a:hover {
-    color: #e1b275;
-  }
-  header {
-    position: relative;
-    padding: 0 2rem;
-  }
-  .navbar {
-    width: 100%;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .navbar .logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .navbar .links {
-    display: flex;
-    gap: 2rem;
-  }
-  .navbar .toggle_btn {
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-  }
-
-  .action_btn {
-    background-color: #f76916e1;
-    color: #ffff;
-    padding: 0.5rem 1rem;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: scale 0.2 ease;
-  }
-  .action_btn:hover {
-    scale: 1.05;
-    color: #fff;
-  }
-  .action_btn:active {
-    scale: 0.95;
-  }
-
-  .dropdown_menu {
-    display: none;
-    position: absolute;
-    right: 2rem;
-    top: 60px;
-    height: 0;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
-  .dropdown_menu.open {
-    height: 240px;
-  }
-  .dropdown_menu li {
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .dropdown_menu .action_btn {
-    width: 100px;
-    display: flex;
-    justify-content: center;
-  }
-
-  @media (max-width: 992px) {
-    .navbar .links,
-    .navbar .action_btn {
-      display: none;
-    }
-    .navbar .toggle_btn {
-      display: block;
-    }
-    .dropdown_menu {
-      display: block;
-    }
-  }
+button {
+  align-self: baseline;
+  border-radius: 128px;
+  height: 50px;
+  width: 200px;
+  font-size: 26px;
+  background-color: #9a4c95;
 }

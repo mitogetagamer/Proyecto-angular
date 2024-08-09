@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { InicioService } from '../../services/inicio.service';
-
+import { NavegacionComponent } from '../navegacion/navegacion.component';
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, NavegacionComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css',
 })

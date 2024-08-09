@@ -1,8 +1,9 @@
 body {
-  background-color: #f3dbc3;
+  background-color: #ffcc80;
   display: flex;
   justify-content: center;
   padding: 13vh;
+  height: 100vh;
 }
 .btn {
   background-color: #e1b275;

@@ -4,9 +4,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #ffcc80;
-  width: 100;
-  height: 100vh;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .title {
@@ -14,11 +15,13 @@ body {
   color: #ffffff;
   font-size: 26px !important;
 }
+
 .container {
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 1.5rem;
 }
 
 .cupcake {
@@ -32,26 +35,23 @@ body {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .t1 {
   color: #ffffff;
 }
+
 .precio {
   color: #ffffff;
 }
+
 .cupcake img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
-.pata {
-  background-color: #ff6f61;
-  text-align: center;
-  padding: 1rem;
-  background-color: #f7bff7be;
-}
+
 .buton {
-  position: relative;
   padding: 8px 10px;
   border-radius: 13px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -60,33 +60,42 @@ body {
   outline: none;
   background: #ff6f61;
   transition: 0.5s;
+  cursor: pointer;
 }
+
 .buton:hover {
   background: #ffcc80;
 }
+
+/* Responsividad */
+
 @media (min-width: 600px) {
   .cupcake {
-    width: calc(60% - 2.4rem);
+    width: calc(50% - 2.4rem);
   }
 }
+
 @media (min-width: 900px) {
   .cupcake {
-    width: calc(40% - 2.4rem);
+    width: calc(33.33% - 2.4rem);
   }
 }
+
 @media (min-width: 1200px) {
   .cupcake {
-    width: calc(27.78% - 2.4rem);
+    width: calc(25% - 2.4rem);
   }
 
   li {
     list-style: none;
   }
+
   .size {
-    font-size: 3, 10rem;
+    font-size: 3.1rem;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
   }
+
   a {
     text-decoration: none;
     color: rgb(255, 255, 255);

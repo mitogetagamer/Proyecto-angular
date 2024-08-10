@@ -4,17 +4,22 @@
   font-weight: 600;
   font-style: normal;
 }
+
 body {
   background-color: #ffcc80;
-  height: 900px;
-  align-content: center;
-}
-.text {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
-  font-weight: 600;
-  color: #000000;
-  font-size: 26px !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.hed {
+  width: 100%;
+}
+
 .heading {
   display: flex;
   justify-content: center;
@@ -22,144 +27,89 @@ body {
   flex-direction: column;
   text-align: center;
   margin: 20px auto;
-  position: relative;
-  width: 1138px;
-  height: 382px;
+  width: 90%;
+  max-width: 1138px;
+  padding: 20px;
 }
-button {
-  align-self: baseline;
-  border-radius: 128px;
-  height: 75px;
-  width: 200px;
-  font-size: 26px;
-  background-color: #9a4c95;
-}
+
 .heading h1 {
-  font-size: 50px;
+  font-size: 3rem;
   color: #000;
   margin-bottom: 25px;
-  position: relative;
 }
 
 .heading p {
-  font-size: 18px;
+  font-size: 26px;
   margin-bottom: 35px;
-}
-.container {
-  width: 90%;
-  margin: 0 auto;
-  padding: 10px 20px;
-}
-.about {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  color: #000;
 }
 
-.about-image {
-  flex: 1;
-  margin-right: 40px;
-  overflow: hidden;
-}
-.about-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  transition: 0.5s ease;
-}
-.about-image img:hover img {
-  transform: scale(1.2);
-}
-.about-content {
-  flex: 1;
-}
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-direction: row-reverse;
-  flex: 1;
-}
-
-.about-content h2 {
-  font-size: 23px;
-  margin-bottom: 15px;
-  color: #333;
-}
-.about-content p {
-  font-size: 18px;
+.text {
+  font-size: 1.25rem;
+  color: #000000;
   line-height: 1.5;
-  color: #666;
+  margin-bottom: 20px;
 }
-.about-content .read-more {
-  display: inline-block;
-  padding: 10px 20px;
-  color: #ffcc80;
-  font-size: 19px;
-  text-decoration: none;
-  border-radius: 25px;
-  margin-top: 15px;
-  transition: 0.3s ease;
+
+button {
+  align-self: baseline;
+  border-radius: 128px;
+  height: 60px;
+  width: 200px;
+  font-size: 26px;
+  background-color: #9a4c95;
+  color: #000000;
 }
-.about-content .read-more:hover {
-  background-color: #d08e73;
+
+button:hover {
+  transform: scale(1.05);
 }
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
 
 @media screen and (max-width: 768px) {
-  .hed {
-    width: 50vh;
-  }
-  body {
-    width: max-content;
-  }
   .heading {
-    padding: 0px 20px;
-    height: 60vh;
-    width: 55vh;
+    padding: 0 20px;
   }
+
   .heading h1 {
-    font-size: 36px;
+    font-size: 2.5rem;
   }
-  .heading p {
-    font-size: 17px;
-    margin-bottom: 0px;
-  }
-  .container {
-    padding: 0px;
-  }
-  .about {
-    padding: 20px;
-    flex-direction: column;
-  }
-  .about-image {
-    margin-right: 0px;
-    margin-bottom: 20px;
-  }
-  .about-content p {
-    padding: 0px;
-    font-size: 16px;
-  }
-  .about-content .read-more {
-    font-size: 16px;
-  }
+
+  .heading p,
   .text {
-    margin-right: 0px;
-    margin-bottom: 16px;
-    font-weight: 600;
-    color: #000000;
-    font-size: 26px !important;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 140px;
+    height: 45px;
+    font-size: 0.9rem;
   }
 }
-@media screen and (max-width: 381px) {
+
+@media screen and (max-width: 480px) {
   .heading {
-    padding: 0px 20px;
-    height: 20vh;
-    width: 50vh;
+    padding: 0 10px;
+    margin: 20px 0;
   }
+
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p,
   .text {
-    display: flex;
-    font-weight: 600;
-    color: #000000;
-    font-size: 16px !important;
+    font-size: 0.9rem;
+  }
+
+  button {
+    width: 120px;
+    height: 40px;
+    font-size: 0.8rem;
   }
 }

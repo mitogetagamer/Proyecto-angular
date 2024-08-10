@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EnviosService {
   httpClient = inject(HttpClient);
-  API_URL = 'http://localhost:3000/envios';
+  API_URL = 'http://18.116.31.73:3000/envios';
   constructor() {}
   crearEnvio(
     nombreDeUsuario: any,

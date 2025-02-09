@@ -7,14 +7,14 @@
   <li>
     <div class="cupcake">
       <img
-        src="http://18.116.31.73:3000/imagenes/{{ cpk.imagen }}"
+        src="http://localhost:3000/imagenes/{{ cpk.imagen }}"
         alt="Mapcake"
       />
       <h4>{{ cpk.nombre }}</h4>
       <p>{{ cpk.descripcion }}</p>
       <h5>Precio: ${{ cpk.precio }}</h5>
 
-      <!-- <button
+      <button
         type="button"
         class="btn btn-warning"
         class="btn btn-primary"
@@ -23,7 +23,7 @@
         (click)="handleUpdate(cpk)"
       >
         Update
-      </button> -->
+      </button>
 
       <button
         type="button"

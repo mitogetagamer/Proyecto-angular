@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class TiendaService {
-  private API_URL = 'http://18.116.31.73:3000/Lanzamientos/';
+  private API_URL = 'http://localhost:3000/Lanzamientos/';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -33,12 +33,13 @@ export class TiendaService {
     return this.httpClient.delete(`${this.API_URL}/${id}`);
   }
 
-  editarMapcakes(id: string, nombre: any, precio: any, descripcion: any) {
-    const formData = new FormData();
-    formData.append('nombre', nombre);
-    formData.append('precio', precio);
-    formData.append('descripcion', descripcion);
-    const URL = `${this.API_URL}/${id}`;
-    return this.httpClient.put(URL, formData);
+  editarMapcakes(
+    id: string,
+    nombre: string,
+    precio: number,
+    descripcion: string
+  ): Observable<any> {
+    const payload = { nombre, precio, descripcion };
+    return this.httpClient.put(`${this.API_URL}/${id}`, payload);
   }
 }

@@ -8,12 +8,7 @@ import { NavegacionComponent } from '../navegacion/navegacion.component';
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [
-    FormsModule,
-    CurrencyPipe,
-    ReactiveFormsModule,
-    NavegacionComponent,
-  ],
+  imports: [FormsModule, ReactiveFormsModule, NavegacionComponent],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css',
 })
